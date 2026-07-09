@@ -2,36 +2,37 @@ package api.endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import models.pet.pet.PetStoreModel;
 
 import static io.restassured.RestAssured.given;
 
 public class PetEndPoints
 {
-    public static Response createPet()
+    public static Response createPet(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .body()
+                .body(pet)
                 .when()
                 .post(Routes.CREATE_PET);
         return response;
     }
 
-    public static Response updatePet()
+    public static Response updatePet(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .body()
+                .body(pet)
                 .when()
                 .put(Routes.UPDATE_PET);
         return response;
     }
 
-    public static Response getPetById(String petId)
+    public static Response getPetById(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .pathParam("petId", petId)
+                .pathParam("petId", pet.id)
                 .when()
                 .get(Routes.GET_PET_BY_ID);
         return response;
@@ -48,32 +49,32 @@ public class PetEndPoints
         return response;
     }
 
-    public static Response updatePetByStatus(String petId, String status)
+    public static Response updatePetByStatus(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.URLENC)
                 .accept(ContentType.JSON)
-                .pathParam("petId", petId)
-                .formParam("status", status)
+                .pathParam("petId", pet.id)
+                .formParam("status", pet.status)
                 .when()
                 .post(Routes.UPDATE_PET_FORM);
         return response;
     }
 
-    public static Response findPetByStatus()
+    public static Response findPetByStatus(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .queryParam("status", "available")
+                .queryParam("status", pet.status)
                 .when()
                 .get(Routes.FIND_PET_BY_STATUS);
         return response;
     }
 
-    public static Response deletePet(String petId)
+    public static Response deletePet(PetStoreModel.PetModel pet)
     {
         Response response = given().contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .pathParam("petId", petId)
+                .pathParam("petId", pet.id)
                 .when()
                 .delete(Routes.DELETE_PET);
         return response;

@@ -1,0 +1,36 @@
+{
+  "createPet": [
+    {
+      "id": 101,
+      "category": {
+        "id": 1,
+        "name": "Dog"
+      },
+      "name": "Bruno",
+      "tags": [
+        {
+          "id": 1,
+          "name": "Friendly"
+        }
+      ],
+      "status": "available"
+    }
+  ],
+  "updatePet": [
+    {
+      "id": 101,
+      "category": {
+        "id": 1,
+        "name": "Dog"
+      },
+      "name": "Bruno Updated",
+      "tags": [
+        {
+          "id": 1,
+          "name": "Friendly"
+        }
+      ],
+      "status": "sold"
+    }
+  ]
+}
