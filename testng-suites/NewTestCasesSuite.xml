@@ -23,7 +23,8 @@
         <classes>
 
             <!-- New Test -->
-            <class name="api.test.PetTest"/>
+            <class name="api.test.StoreTest"/>
+            <!--<class name="api.test.PetTest"/>-->
             <!--<class name="api.test.UserTests"/>-->
 
         </classes>

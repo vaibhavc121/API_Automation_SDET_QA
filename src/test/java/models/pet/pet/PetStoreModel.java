@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PetStoreModel
 {
-  
+
     public static class PetModel
     {
         public long id;
@@ -28,5 +28,15 @@ public class PetStoreModel
             public long id;
             public String name;
         }
+    }
+
+    public static class StoreModel
+    {
+        public int id;
+        public int petId;
+        public int quantity;
+        public String shipDate;
+        public String status;
+        public boolean complete;
     }
 }

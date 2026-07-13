@@ -13,6 +13,7 @@ Delete user (Delete) : https://petstore.swagger.io/v2/user/{username}
 public class Routes
 {
     public static String BASE_URL = "https://petstore.swagger.io/v2";
+    public static String BASE_URL_HEROKUAPP = "https://restful-booker.herokuapp.com/booking";
 
     // User Module
     public static String post_url = BASE_URL + "/user"; // Create user
@@ -36,7 +37,18 @@ public class Routes
     // Store Module
     //==========================
 
+    public static final String GET_INVENTORY = BASE_URL + "/store/inventory";
     public static final String PLACE_ORDER = BASE_URL + "/store/order";
     public static final String GET_ORDER = BASE_URL + "/store/order/{orderId}";
     public static final String DELETE_ORDER = BASE_URL + "/store/order/{orderId}";
+
+    //==========================
+    // Booking Module
+    //==========================
+    public static final String GET_BOOKING_IDS = BASE_URL_HEROKUAPP;
+    public static final String GET_BOOKING = BASE_URL_HEROKUAPP + "/{id}";
+    public static final String CreateBooking = BASE_URL_HEROKUAPP;
+    public static final String UpdateBooking = BASE_URL_HEROKUAPP + "/{id}";
+    public static final String PartialUpdateBooking = BASE_URL_HEROKUAPP + "/{id}";
+    public static final String DeleteBooking = BASE_URL_HEROKUAPP + "/{id}";
 }

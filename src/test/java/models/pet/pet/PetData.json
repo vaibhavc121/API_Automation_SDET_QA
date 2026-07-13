@@ -7,13 +7,21 @@
         "name": "Dog"
       },
       "name": "Bruno",
+      "uname": "U Bruno",
       "tags": [
         {
           "id": 1,
           "name": "Friendly"
         }
       ],
-      "status": "available"
+      "utags": [
+        {
+          "id": 2,
+          "name": "u Friendly"
+        }
+      ],
+      "status": "available",
+      "ustatus": "available"
     }
   ],
   "updatePet": [
@@ -31,6 +39,16 @@
         }
       ],
       "status": "sold"
+    }
+  ],
+  "store": [
+    {
+      "id": 1111,
+      "petId": 2,
+      "quantity": 10,
+      "shipDate": "2026-07-12T10:30:00.000+0000",
+      "status": "placed",
+      "complete": true
     }
   ]
 }
