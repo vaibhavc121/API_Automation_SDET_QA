@@ -35,4 +35,39 @@ public class HerokuappEndPoints
         return response;
 
     }
+
+    public static Response updateBooking(HerokuappModel app)
+    {
+        Response response=given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .pathParam("id",)
+                .body()
+                .when()
+                .post(Routes.UpdateBooking);
+        return response;
+    }
+
+    public static Response updateBooking(HerokuappModel app)
+    {
+        Response response=given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .pathParam("id",)
+                .body()
+                .when()
+                .patch(Routes.PartialUpdateBooking);
+        return response;
+    }
+
+    public static Response updateBooking(HerokuappModel app)
+    {
+        Response response=given()
+                .contentType(ContentType.JSON)
+                .pathParam("id",)
+                .when()
+                .delete(Routes.DeleteBooking);
+        return response;
+    }
+
 }
